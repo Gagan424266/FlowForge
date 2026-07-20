@@ -1,0 +1,28 @@
+{
+  "name": "Sample: delay then email",
+  "description": "Manual trigger → delay → email",
+  "nodes": [
+    {
+      "id": "trigger",
+      "type": "trigger",
+      "label": "Manual",
+      "config": {},
+      "next": ["delay1"]
+    },
+    {
+      "id": "delay1",
+      "type": "delay",
+      "label": "Wait 200ms",
+      "config": { "ms": 200 },
+      "next": ["email1"]
+    },
+    {
+      "id": "email1",
+      "type": "email",
+      "label": "Notify ops",
+      "config": { "to": "ops@example.com", "subject": "Flow done" },
+      "next": []
+    }
+  ],
+  "enabled": true
+}
